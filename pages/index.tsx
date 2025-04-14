@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import Link from 'next/link'
-import { Grid, Container, Typography, Button, Box } from '@mui/material'
-import PostCard from '../components/PostCard'
-import { useGetPostsQuery } from '../store/apiSlice'
+import { useState } from 'react';
+import Link from 'next/link';
+import { Stack, Container, Typography, Button, Box } from '@mui/material';
+import PostCard from '../components/PostCard';
+import { useGetPostsQuery } from '../store/apiSlice';
 
 const POSTS_PER_PAGE = 6;
 
@@ -10,43 +10,75 @@ export default function Home() {
   const [page, setPage] = useState(1);
   const { data, isLoading, error } = useGetPostsQuery({ page, limit: POSTS_PER_PAGE });
 
-  if (isLoading) return <Typography>Loading...</Typography>;
-  if (error || !data) return <Typography>Error loading posts.</Typography>;
+  if (isLoading) return <Typography align="center" sx={{ mt: 4 }}>Loading...</Typography>;
+  if (error || !data) return <Typography align="center" sx={{ mt: 4 }}>Error loading posts.</Typography>;
 
   const totalPages = Math.ceil(data.total / POSTS_PER_PAGE);
 
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom>
-        Blog Posts
+    <Container maxWidth="sm" sx={{ py: 6 }}>
+      <Typography 
+        variant="h4" 
+        textAlign="center" 
+        gutterBottom 
+        sx={{ fontWeight: 'bold', letterSpacing: 1, color: 'primary.main' }}
+      >
+        BLOG POSTS
       </Typography>
-      <Button variant="contained" color="primary" component={Link} href="/add-post">
+      <Button
+        variant="contained"
+        color="primary"
+        component={Link}
+        href="/add-post"
+        fullWidth
+        sx={{
+          mb: 4,
+          borderRadius: '50px',
+          textTransform: 'none',
+          boxShadow: 3,
+          py: 1.5,
+          fontSize: '1rem'
+        }}
+      >
         Add New Post
       </Button>
-      <Grid container spacing={2} sx={{ marginTop: 2 }}>
+      <Stack spacing={3}>
         {data.posts.map((post) => (
-          <Grid item xs={12} sm={6} md={4} key={post.id}>
-            <PostCard post={post} />
-          </Grid>
+          <PostCard key={post.id} post={post} />
         ))}
-      </Grid>
-
-      {}
-      <Box display="flex" justifyContent="center" alignItems="center" mt={4}>
+      </Stack>
+      <Box 
+        display="flex" 
+        justifyContent="center" 
+        alignItems="center" 
+        mt={6}
+      >
         <Button 
           onClick={() => setPage((prev) => Math.max(prev - 1, 1))} 
           disabled={page === 1}
-          sx={{ mr: 2 }}
+          sx={{
+            mr: 2,
+            borderRadius: '50px',
+            textTransform: 'none',
+            boxShadow: 2,
+            px: 3
+          }}
         >
           Previous
         </Button>
-        <Typography>
+        <Typography sx={{ fontWeight: 'medium' }}>
           Page {page} of {totalPages}
         </Typography>
         <Button 
           onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
           disabled={page === totalPages}
-          sx={{ ml: 2 }}
+          sx={{
+            ml: 2,
+            borderRadius: '50px',
+            textTransform: 'none',
+            boxShadow: 2,
+            px: 3
+          }}
         >
           Next
         </Button>

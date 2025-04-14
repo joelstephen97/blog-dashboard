@@ -21,9 +21,14 @@ export default function AddPost() {
   };
 
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom>
-        Add New Post
+    <Container maxWidth="sm" sx={{ py: 6 }}>
+      <Typography 
+        variant="h4" 
+        textAlign="center" 
+        gutterBottom 
+        sx={{ fontWeight: 'bold', letterSpacing: 1, color: 'primary.main' }}
+      >
+        ADD NEW BLOG POST
       </Typography>
       <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
         <TextField

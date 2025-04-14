@@ -14,8 +14,13 @@ export default function PostDetail() {
   if (error || !post) return <Typography>Error loading post.</Typography>;
 
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom>
+    <Container maxWidth="sm" sx={{ py: 6 }}>
+      <Typography 
+        variant="h4" 
+        textAlign="center" 
+        gutterBottom 
+        sx={{ fontWeight: 'bold', letterSpacing: 1, color: 'primary.main' }}
+      >
         {post.title}
       </Typography>
       <Typography variant="subtitle1" color="textSecondary" gutterBottom>

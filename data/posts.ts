@@ -7,8 +7,12 @@ export interface BlogPost {
   }
   
   let posts: BlogPost[] = [
-    { id: 1, title: 'First Post', author: 'Admin', body: 'Welcome to the blog!' },
-    // Add more initial posts as needed
+    { id: 1, title: 'First Post 1', author: 'Admin 1', body: 'Welcome to the blog!' },
+    { id: 2, title: 'First Post 2', author: 'Admin 2', body: 'Welcome to the blog!' },
+    { id: 3, title: 'First Post 3', author: 'Admin 3', body: 'Welcome to the blog!' },
+    { id: 4, title: 'First Post 4', author: 'Admin 4', body: 'Welcome to the blog!' },
+    { id: 5, title: 'First Post 5', author: 'Admin 5', body: 'Welcome to the blog!' },
+    { id: 6, title: 'First Post 6', author: 'Admin 6', body: 'Welcome to the blog!' },
   ];
   
   export const getPosts = (page: number, limit: number) => {
