@@ -15,8 +15,9 @@ export interface BlogPost {
   ];
   
   export const getPosts = (page: number, limit: number) => {
+    const sortedPosts = [...posts].sort((a, b) => b.id - a.id);
     const startIndex = (page - 1) * limit;
-    const paginatedPosts = posts.slice(startIndex, startIndex + limit);
+    const paginatedPosts = sortedPosts.slice(startIndex, startIndex + limit);
     return { posts: paginatedPosts, total: posts.length, page, limit };
   };
   
@@ -27,4 +28,3 @@ export interface BlogPost {
     posts.push(newPost);
     return newPost;
   };
-  

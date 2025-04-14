@@ -37,6 +37,7 @@ export default function Home() {
           mb: 4,
           borderRadius: '50px',
           textTransform: 'none',
+          fontWeight: 'bold',
           boxShadow: 3,
           py: 1.5,
           fontSize: '1rem'
@@ -68,8 +69,8 @@ export default function Home() {
         >
           Previous
         </Button>
-        <Typography sx={{ fontWeight: 'medium' }}>
-          Page {page} of {totalPages}
+        <Typography sx={{ fontWeight: 'bold' }}>
+          Page {page} of {totalPages > page ? totalPages : page }
         </Typography>
         <Button 
           onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
