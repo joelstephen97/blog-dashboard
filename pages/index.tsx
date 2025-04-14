@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import { Stack, Container, Typography, Button, Box } from '@mui/material';
-import PostCard from '../components/PostCard';
-import { useGetPostsQuery } from '../store/apiSlice';
+import { useState } from 'react'
+import Link from 'next/link'
+import { Stack, Container, Typography, Button, Box } from '@mui/material'
+import PostCard from '../components/PostCard'
+import { useGetPostsQuery } from '../store/apiSlice'
 
 const POSTS_PER_PAGE = 6;
 

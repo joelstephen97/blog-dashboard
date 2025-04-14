@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
-import { AppBar, Toolbar, Typography, Container } from '@mui/material';
-import Link from 'next/link';
+import { ReactNode } from 'react'
+import { AppBar, Toolbar, Typography, Container } from '@mui/material'
+import Link from 'next/link'
 
 interface LayoutProps {
   children: ReactNode;

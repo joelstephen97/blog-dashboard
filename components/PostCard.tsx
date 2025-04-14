@@ -1,6 +1,6 @@
-import { Card, CardContent, Typography, CardActions, Button, useMediaQuery, useTheme } from '@mui/material';
-import Link from 'next/link';
-import { BlogPost } from '../store/apiSlice';
+import { Card, CardContent, Typography, CardActions, Button, useMediaQuery, useTheme } from '@mui/material'
+import Link from 'next/link'
+import { BlogPost } from '../store/apiSlice'
 
 interface PostCardProps {
   post: BlogPost;

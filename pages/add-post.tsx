@@ -1,7 +1,7 @@
-import { useState, FormEvent } from 'react';
-import { Container, TextField, Button, Typography, Box } from '@mui/material';
-import { useAddPostMutation } from '../store/apiSlice';
-import { useRouter } from 'next/router';
+import { useState, FormEvent } from 'react'
+import { Container, TextField, Button, Typography, Box } from '@mui/material'
+import { useAddPostMutation } from '../store/apiSlice'
+import { useRouter } from 'next/router'
 
 export default function AddPost() {
   const [title, setTitle] = useState('');
