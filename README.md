@@ -16,6 +16,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) 
 
+## Live Demo
+
+Open [https://blog-dashboard-phi-nine.vercel.app](https://blog-dashboard-phi-nine.vercel.app) 
+
 
 ## Design Decisions and Challenges
 

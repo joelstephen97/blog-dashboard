@@ -15,6 +15,8 @@ export default function Home() {
 
   const totalPages = Math.ceil(data.total / POSTS_PER_PAGE);
 
+  const sortedPosts = [...data.posts].sort((a, b) => b.id - a.id);
+
   return (
     <Container maxWidth="sm" sx={{ py: 6 }}>
       <Typography 
@@ -40,10 +42,10 @@ export default function Home() {
           fontSize: '1rem'
         }}
       >
-        Add New Post
+        ADD A NEW POST
       </Button>
       <Stack spacing={3}>
-        {data.posts.map((post) => (
+        {sortedPosts.map((post) => (
           <PostCard key={post.id} post={post} />
         ))}
       </Stack>
